@@ -3,15 +3,15 @@
 
 //ODI Dependencies file, your platform must implement this functions.
 
-#include "core/types.h"
+#include "types.h"
 
-extern u64 ODI_DEP_PAGE_SIZE;
-extern u8 ODI_DEP_MPROTECT_PAGE_CACHE_DISABLE;
-extern u8 ODI_DEP_MPROTECT_PAGE_WRITE_BIT; 
+extern uint64_t ODI_DEP_PAGE_SIZE;
+extern uint8_t ODI_DEP_MPROTECT_PAGE_CACHE_DISABLE;
+extern uint8_t ODI_DEP_MPROTECT_PAGE_WRITE_BIT; 
 
 //Conversion management.
-char* odi_dep_itoa(s64 value, char * str, int base);
-s64 odi_dep_atoi(const char * str);
+char* odi_dep_itoa(uint64_t value, char * str, int base);
+uint64_t odi_dep_atoi(const char * str);
 
 int odi_dep_memcmp(const void *s1, const void *s2, size_t n);
 void* odi_dep_memset(void *s, int c, size_t n);
@@ -34,7 +34,7 @@ void* odi_dep_get_free_contiguous_virtual_address(size_t size);
 void odi_dep_map_current_memory_size(void* virtual_address, void* physical_memory, size_t size);
 //Maps the page aligned virtual_address to physical_memory.
 void odi_dep_map_current_memory(void* virtual_memory, void* physical_memory);
-void odi_dep_mprotect_current(void* address, u64 size, u8 permissions);
+void odi_dep_mprotect_current(void* address, uint64_t size, uint8_t permissions);
 void* odi_dep_request_current_page(void);
 void* odi_dep_get_virtual_address(void* address);
 
@@ -44,14 +44,14 @@ void odi_dep_vsnprintf(char* buffer, int size, const char* format, odi_va_list a
 void odi_dep_printf(const char* format, ...);
 
 //IO Management. Usually an embedded assembly line does the trick.
-void odi_dep_outb(u16 port, u8 value);
-void odi_dep_outw(u16 port, u16 value);
-void odi_dep_outl(u16 port, u32 value);
-u8 odi_dep_inb(u16 port);
-u16 odi_dep_inw(u16 port);
-u32 odi_dep_inl(u16 port);
-void odi_dep_insw(u16 port, u8* buffer, int count);
-void odi_dep_outsw(u16 port, u8 *buffer, int count);
+void odi_dep_outb(uint16_t port, uint8_t value);
+void odi_dep_outw(uint16_t port, uint16_t value);
+void odi_dep_outl(uint16_t port, uint32_t value);
+uint8_t odi_dep_inb(uint16_t port);
+uint16_t odi_dep_inw(uint16_t port);
+uint32_t odi_dep_inl(uint16_t port);
+void odi_dep_insw(uint16_t port, uint8_t* buffer, int count);
+void odi_dep_outsw(uint16_t port, uint8_t *buffer, int count);
 void odi_dep_io_wait(void);
 
 #endif
