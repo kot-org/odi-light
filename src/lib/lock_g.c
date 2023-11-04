@@ -3,7 +3,7 @@
 __attribute__((noinline)) void odi_spinlock_acquire(odi_spinlock_t *lock) {
     volatile size_t deadlock_counter = 0;
     for (;;) {
-        if (spinlock_test_and_acq(lock)) {
+        if (odi_spinlock_test_and_acq(lock)) {
             break;
         }
 #if defined (__x86_64__)
