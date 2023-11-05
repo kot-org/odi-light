@@ -42,7 +42,7 @@ typedef struct{
     int (*config_write_word)(odi_pci_device_id_t, uint16_t, uint16_t); // arg 0: id | arg1: offset | arg2: value | return result
 } odi_pci_handler_t;
 
-odi_pci_handler_t* odi_drivers_bus_odi_pci_init(void* mcfg);
+odi_pci_handler_t* odi_drivers_bus_pci_init(void* mcfg);
 
 size_t odi_drivers_bus_pci_count_devices(odi_pci_device_info_t* info);
 odi_pci_device_id_t odi_drivers_bus_pci_find_device(odi_pci_device_info_t* info, size_t index);

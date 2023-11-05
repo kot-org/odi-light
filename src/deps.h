@@ -35,23 +35,12 @@ void odi_dep_map_current_memory_size(void* virtual_address, void* physical_memor
 //Maps the page aligned virtual_address to physical_memory.
 void odi_dep_map_current_memory(void* virtual_memory, void* physical_memory);
 void odi_dep_mprotect_current(void* address, uint64_t size, uint8_t permissions);
-void* odi_dep_request_current_page(void);
+void* odi_dep_request_page(void);
 void* odi_dep_get_virtual_address(void* address);
 
 //Print management.
 void odi_dep_vprintf(const char* format, odi_va_list args);
 void odi_dep_vsnprintf(char* buffer, int size, const char* format, odi_va_list args);
 void odi_dep_printf(const char* format, ...);
-
-//IO Management. Usually an embedded assembly line does the trick.
-void odi_dep_outb(uint16_t port, uint8_t value);
-void odi_dep_outw(uint16_t port, uint16_t value);
-void odi_dep_outl(uint16_t port, uint32_t value);
-uint8_t odi_dep_inb(uint16_t port);
-uint16_t odi_dep_inw(uint16_t port);
-uint32_t odi_dep_inl(uint16_t port);
-void odi_dep_insw(uint16_t port, uint8_t* buffer, int count);
-void odi_dep_outsw(uint16_t port, uint8_t *buffer, int count);
-void odi_dep_io_wait(void);
 
 #endif

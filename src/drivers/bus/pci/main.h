@@ -3,6 +3,7 @@
 
 #include "../pci.h"
 #include "../../../lib/vector.h"
+#include "../../../lib/asm_x86_64.h"
 #include "../../../deps.h"
 #include "../../../types.h"
 

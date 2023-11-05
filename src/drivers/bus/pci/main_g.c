@@ -11,7 +11,7 @@ odi_pci_device_array_info_t* pci_device_array = NULL;
 #include "interface.c"
 
 
-odi_pci_handler_t* odi_drivers_bus_odi_pci_init(void* mcfg_table){
+odi_pci_handler_t* odi_drivers_bus_pci_init(void* mcfg_table){
     odi_pci_device_list_info_t* pci_device_list = odi_pci_list_init();
 
     if(mcfg_table != NULL){

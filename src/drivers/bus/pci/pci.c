@@ -6,17 +6,17 @@
 static void odi_pci_write32(uint32_t addr, uint32_t data) {
     addr &= ~(0b11);
     /* write address */
-    odi_dep_outb(ODI_PCI_CONFIG_ADDR, addr);
+    odi_outb(ODI_PCI_CONFIG_ADDR, addr);
     /* write data */
-    odi_dep_outb(ODI_PCI_CONFIG_DATA, data);
+    odi_outb(ODI_PCI_CONFIG_DATA, data);
 }
 
 static uint32_t odi_pci_read32(uint32_t addr) {
     addr &= ~(0b11);
     /* write address */
-    odi_dep_outb(ODI_PCI_CONFIG_ADDR, addr);
+    odi_outb(ODI_PCI_CONFIG_ADDR, addr);
     /* read data */
-    return odi_dep_inl(ODI_PCI_CONFIG_DATA);
+    return odi_inl(ODI_PCI_CONFIG_DATA);
 }
 
 static uint16_t odi_pci_read16(uint32_t addr) {
