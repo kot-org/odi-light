@@ -1,3 +1,5 @@
+#include "../src/deps.h"
+#include "../src/lib/debug.h"
 #include "../odi-light/odi-ocf.c"
 
 void odi_examples_pci(void* mcfg_table){
@@ -17,7 +19,7 @@ void odi_examples_pci(void* mcfg_table){
     for(size_t i = 0; i < odi_pci_device_detected; i++){
         odi_pci_device_id_t device_id = odi_pci_handler->find_device(&odi_pci_device_info, i);
         odi_pci_device_info_t device_info;
-        assert(!odi_pci_handler->get_info_device(device_id, &device_info));
+        odi_assert(!odi_pci_handler->get_info_device(device_id, &device_info));
         odi_dep_printf("[module/odi/pci/device/%d] Vendor : %d, Device ID : %d, Class ID : %d, Subclass ID : %d, Programming Interface Byte : %d\n", i, device_info.vendor_id, device_info.device_id, device_info.class_id, device_info.sub_class_id, device_info.prog_if);
     }
 
